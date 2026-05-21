@@ -1,18 +1,18 @@
 services:
   app:
-    image: slfhstd.uk/slfhstd/deletedpostsbot:dev
+    image: ghcr.io/imonlytryingtohelp/deletedpostsbot:dev
     container_name: mch-deletedposts
     restart: unless-stopped
     volumes:
       - ./docker-config:/app/config
     environment:
-      REDDIT_CLIENT_ID: "${REDDIT_CLIENT_ID}"
-      REDDIT_CLIENT_SECRET: "${REDDIT_CLIENT_SECRET}"
-      REDDIT_USER_AGENT: "${REDDIT_USER_AGENT}"
-      REDDIT_USERNAME: "${REDDIT_USERNAME}"
-      REDDIT_PASSWORD: "${REDDIT_PASSWORD}"
-      REDDIT_SUB_NAME: "${REDDIT_SUB_NAME}"
-      REDDIT_MAX_DAYS: "${REDDIT_MAX_DAYS}"            # strings are converted to ints when the
-      REDDIT_MAX_POSTS: "${REDDIT_MAX_POSTS}"          # corresponding config value is an int
-      REDDIT_SLEEP_MINUTES: "${REDDIT_SLEEP_MINUTES}"
-      REDDIT_BAN_WIKI_PAGE: "${REDDIT_BAN_WIKI_PAGE}"
+      DPB_REDDIT_CLIENT_ID: "${DPB_REDDIT_CLIENT_ID}"
+      DPB_REDDIT_CLIENT_SECRET: "${DPB_REDDIT_CLIENT_SECRET}"
+      DPB_REDDIT_USER_AGENT: "${DPB_REDDIT_USER_AGENT}"
+      DPB_REDDIT_USERNAME: "${DPB_REDDIT_USERNAME}"
+      DPB_REDDIT_PASSWORD: "${DPB_REDDIT_PASSWORD}"
+      DPB_REDDIT_SUB_NAME: "${DPB_REDDIT_SUB_NAME}"
+      DPB_REDDIT_MAX_DAYS: "${DPB_REDDIT_MAX_DAYS}"            # strings are converted to ints when the
+      DPB_REDDIT_MAX_POSTS: "${DPB_REDDIT_MAX_POSTS}"          # corresponding config value is an int
+      DPB_REDDIT_SLEEP_MINUTES: "${DPB_REDDIT_SLEEP_MINUTES}"
+      DPB_REDDIT_BAN_WIKI_PAGE: "${DPB_REDDIT_BAN_WIKI_PAGE}"

@@ -1,5 +1,15 @@
 # Changelog for DeletedPostsBot
 
+## v1.6.0
+
+### Changed
+- **⚠️ BREAKING: Environment variable naming convention** 
+  - All environment variables now use `DPB_REDDIT_` prefix instead of `REDDIT_`
+  - Examples: `REDDIT_CLIENT_ID` → `DPB_REDDIT_CLIENT_ID`, `REDDIT_SUB_NAME` → `DPB_REDDIT_SUB_NAME`
+  - Affected variables: `DPB_REDDIT_CLIENT_ID`, `DPB_REDDIT_CLIENT_SECRET`, `DPB_REDDIT_USER_AGENT`, `DPB_REDDIT_USERNAME`, `DPB_REDDIT_PASSWORD`, `DPB_REDDIT_SUB_NAME`, `DPB_REDDIT_MAX_DAYS`, `DPB_REDDIT_MAX_POSTS`, `DPB_REDDIT_SLEEP_MINUTES`, `DPB_REDDIT_BAN_WIKI_PAGE`
+  - **Migration required**: Update `.env` file and any deployment configurations to use new variable names
+  - No fallback support for old variable names.
+
 ## v1.5.4
 
 ### Fixed

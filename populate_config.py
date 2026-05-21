@@ -27,12 +27,10 @@ DEFAULTS = {
     "ban_wiki_page": "ban-template",
 }
 
-# Try both plain and DP_ prefix for env vars
+# Only read DPB_REDDIT_ prefixed environment variables
 config = {}
 for key in CONFIG_KEYS:
-    env_val = os.getenv(f"REDDIT_{key.upper()}")
-    if env_val is None:
-        env_val = os.getenv(key.upper())
+    env_val = os.getenv(f"DPB_REDDIT_{key.upper()}")
     if env_val is not None:
         # Cast numeric values
         if key in ["max_days", "max_posts", "sleep_minutes"]:
